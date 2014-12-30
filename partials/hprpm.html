@@ -1,0 +1,19 @@
+<!--<body ng-app="hpRpmApp">-->
+  <div ng-controller="HpRPMController as motor">  
+      <!--if I use motor.syntax, I need to use this. syntax in controller-->
+        <b>HP:</b>
+            <select ng-model="hpSelected" ng-options="hp for hp in hps" ng-change="outTorqueCalc()"></select>
+        <br/>
+        <b>RPM:</b>
+            <input type="number" min="0"  ng-model="rpm" ng-change="outTorqueCalc()"></input>
+        <br/>
+        <b>Output Torque (lb-ft): </b> {{outTorqueLbFt | number:2}}
+        (lb-in): {{outTorqueLbFt * 12 | number:2}}
+        <br/>
+        <b>Hello!</b>
+        <!--<button ng-click="chiliSpicy()">Chili</button>
+    <button ng-click="jalapenoSpicy()">Jalapeño</button>
+ <p>The food is {{spice}} {{outTorque}} spicy!</p>
+ <p>{{hpSelected}}</p>-->
+</div>
+<!--</body>-->
