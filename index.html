@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HP RPM Torque Calculator</title>
+  <title>Cory's PT Calculator</title>
   
     <!--Angular import-->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
-    
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-touch.min.js"></script>
     <!--Angular Route API import-->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.js"></script>
     <script type="text/javascript">
@@ -16,14 +16,22 @@
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!--Imports from this package-->
+    <!--Imports written by me-->
     <script src="js/controllers.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <!--Imports found online -->
+    <!--ng-slider for slider bar type input see https://github.com/darul75/ng-slider -->
+    <!--can remove this if I stop using ngSLide on VFDMotor tab-->
+    <link rel="stylesheet" type="text/css" href="lib/ng-slider/css/ng-slider.min.css">
+    <script type="text/javascript" src="lib/ng-slider/ng-slider.min.js"></script>
+    <!--<script src="lib/venturocket-slider/angular-slider.min.js"></script>-->
     
     
 </head>
 <!--This loads the header for the page-->
 <div ng-include='"partials/header.html"'></div> <!--This works!!!--> 
 <br/>
-<body ng-app="hpRpmApp" > 
+<body ng-app="myApp" > 
     <!--when i put app name in body tag header and footer load, when I put it in div they don't-->
     <!--<div ng-include='"partials/hprpm.html"'></div>-->
     
@@ -39,7 +47,7 @@
                 <li ng-class="tab_b_is_active()"><a href="#/interpolate">Interpolate</a></li>
                 <li ng-class="tab_b_is_active()"><a href="#/ptcalc">PT Calc</a></li>
 			</ul>
-			<div data-ng-view></div>
+			<div data-ng-view></div><!--this loads the view served by ngRoute here-->
     </div>
     
     

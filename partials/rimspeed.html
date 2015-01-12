@@ -1,15 +1,31 @@
-<div class="container"> 
-    
-    <div class="row"> 
-    
-        <div class="col-lg-12"> 
-            <span class="page-header">Rim Speed 
-                <small>Add stuff for reim speed calculator!</small> 
-            </span> 
-        </div> 
-    
-    </div> 
-    
-    <!-- etc., more information about the company…. --> 
 
+<!--I would like to add a listener to the Input fields so if a user presses Enter in them it calls te calc() function
+    I need to format the number output before sending it back for the user to see-->
+
+<div class="container">
+    <div class="row" style="text-align:center;">Rim Speed Calculator</div>
+    <div class="row">
+        <div class="col-md-1" style="text-align:right;">Diameter:</div>
+        <!--<div class="col-md-4"><p style="border:solid 1px">Hello</p></div>-->
+        <!--<p style="border:solid 1px; width:250px;">Hello</p>-->
+        <div class="col-md-4"> <input ng-model="diameter" ng-keyup="$event.keyCode == 13 ? calc() : null" type="number" min="0" style="margin-bottom:5px;"></div>
+        <div class="col-md-7"></div>  <!--this holds the end columns in this row empty-->
     </div>
+    <div class="row">
+        <div class="col-md-1" style="text-align:right;">RPM:</div>
+        <div class="col-md-4"><input ng-model="rpm" ng-keyup="$event.keyCode == 13 ? calc() : null" type="number" min="0" style="margin-bottom:5px;"></div>
+        <div class="col-md-7"></div>  <!--this holes the end columns in this row empty-->
+      </div>
+    <div class="row">
+        <div class="col-md-2">Rim Speed:</div>
+        <div class="col-md-3"><input ng-model="mph" ng-keyup="$event.keyCode == 13 ? calc() : null" type="number" min="0" ng-change="mphFpm()">mph</div>
+        <div class="col-md-3"><input ng-model="fpm" ng-keyup="$event.keyCode == 13 ? calc() : null" type="number" min="0" ng-change="fpmMph()">fpm</div>
+        <div class="col-md-4"></div> <!--this holds the end columns in this row-->
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-3">
+            <button ng-click="calc()">Calculate</button>
+            <button ng-click="clearAll()">Clear All</button>
+        </div>
+    </div>
+</div>

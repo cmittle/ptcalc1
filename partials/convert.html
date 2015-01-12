@@ -1,3 +1,58 @@
+<div class="container">
+    <br/>
+    <div class="col-md-6">
+        <div class="row" style="margin-bottom:5px;">
+            <div class="col-md-4"><input type="number" min="0" ng-model="kwInput" ng-change="kwHp()" ng-dblclick="kwPost()"></input></div>
+            <div class="col-md-2">kW</div>
+            <!--<div class="col-md-1">=</div>-->
+            <div class="col-md-4"><input type="number" min="0" ng-model="hpInput" ng-change="hpKw()"  ng-dblclick="kwPost()" ></input></div>
+        <div class="col-md-1">HP</div>
+            <!--<div class="col-md-1"><button ng-click="">Post</button></div>-->
+        </div>
+        <div class="row" style="margin-bottom:5px;">
+            <div class="col-md-4"><input type="number" min="0" ng-model="nmInput" ng-change="nmLbIn()"  ng-dblclick="nmPost()"></input></div>
+            <div class="col-md-2">N-m</div>
+            <!--<div class="col-md-1">=</div>-->
+            <div class="col-md-4"><input type="number" min="0" ng-model="lbInInput" ng-change="lbInNm()"  ng-dblclick="nmPost()"></input></div>
+            
+            <div class="col-md-2">lb-in</div>
+            <!--<div class="col-md-1"><button ng-click="">Post</button></div>-->
+        </div>
+        <div class="row" style="margin-bottom:5px;">
+            <div class="col-md-4"><input type="number" min="0" ng-model="kgInput" ng-change="kgLb()" ng-dblclick="kgPost()"></input></div>
+            <div class="col-md-2">kg</div>
+            <!--<div class="col-md-1">=</div>-->
+            <div class="col-md-4"><input type="number" min="0" ng-model="lbInput1" ng-change="lbKg()" ng-dblclick="kgPost()"></input></div>
+            <div class="col-md-2">lbs</div>
+        </div>
+        <div class="row" style="margin-bottom:5px;">
+            <div class="col-md-4"><input type="number" min="0" ng-model="knInput" ng-change="knLb()" ng-dblclick="knPost()"></input></div>
+            <div class="col-md-2">kN</div>
+            <!--<div class="col-md-1">=</div>-->
+            <div class="col-md-4"><input type="number" min="0" ng-model="lbInput2" ng-change="lbKn()" ng-dblclick="knPost()"></input></div>
+            <div class="col-md-2">lbs</div>
+        </div>
+        <div class="row" style="margin-bottom:5px;">
+            <div class="col-md-4"><input type="number" ng-model="cInput" ng-change="cF()" ng-dblclick="cPost()"></input></div>
+            <div class="col-md-2">*C</div>
+            <!--<div class="col-md-1">=</div>-->
+            <div class="col-md-4"><input type="number" ng-model="fInput" ng-change="fC()" ng-dblclick="cPost()"></input></div>
+            <div class="col-md-2">*F</div>
+        </div>
+    </div>
+    <div class="col-md-6" ng-model="postOut"> <!--style="border:solid 1px;"-->
+        <!--<p>Conversions:</p>-->
+        <textarea class="col-md-12" ng-model="postOut" style="height:180px;" wrap="soft" placeholder="Conversions:">asdf</textarea>
+        <!--<textarea class="col-md-12" ng-model="postOut" style="height:200px;">Conversions:</textarea>-->
+    </div>
+    
+</div>
+
+
+
+
+
+<!--<p>{{5+5}}</p>
 <div class="container"> 
     
     <div class="row"> 
@@ -10,6 +65,6 @@
     
     </div> 
     
-    <!-- etc., more information about the company…. --> 
+     etc., more information about the company….  
 
-    </div>
+    </div>-->

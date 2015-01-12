@@ -1,4 +1,65 @@
-<div class="container"> 
+<div class="container">
+    <br/>
+    <br/>
+    <div class="row" style="margin-bottom:10px;">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-5" style="text-align:right;"><b>DriveR RPM:</b></div>
+                <div class="col-md-7" style="text-align:left;"> <input ng-model="driverRPM" ng-keyup="$event.keyCode == 13 ? calculate() : null" type="number" min="0"></input></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-5" style="text-align:right;"><b>DriveN RPM:</b></div>
+                <div class="col-md-7" style="text-align:left;"><input ng-model="drivenRPM" ng-keyup="$event.keyCode == 13 ? calculate() : null" type="number" min="0"></input></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="col-md-5" style="text-align:right;"><b>DriveR Size:</b></div>
+            <div class="col-md-7" style="text-align:left;"><input ng-model="driverSize" ng-keyup="$event.keyCode == 13 ? calculate() : null" type="number" min="0"></input></div>
+        </div>
+        <div class="col-md-4">
+            <div class="col-md-5" style="text-align:right;"><b>DriveN Size:</b></div>
+            <div class="col-md-7" style="text-align:left;"><input ng-model="drivenSize" ng-keyup="$event.keyCode == 13 ? calculate() : null" type="number" min="0"></input></div>
+        </div>
+    </div>
+    
+    <br/>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-3">
+            <button ng-click="calculate()">Calculate</button>
+            <button ng-click="clearAll()">Clear All</button>
+        </div>
+    </div>
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+        <!--<div class="row">
+            <div class="col-md-3" style="text-align:right;"><b>.9</b></div>
+            <div class="col-md-9" style="text-align:left;"><p style="border:1px solid;text-align:center;">{{cost / .9 | currency:"$"}}</p> </div>
+        </div>-->
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container"> 
     
     <div class="row"> 
     
@@ -10,6 +71,6 @@
     
     </div> 
     
-    <!-- etc., more information about the company…. --> 
+     etc., more information about the company….  
 
-    </div>
+</div>-->

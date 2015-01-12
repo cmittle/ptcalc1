@@ -1,15 +1,85 @@
-<div class="container"> 
+<div class="container" > 
+    <div class="row"> <!--row showing cost margin and sell-->
+            <div class="col-md-12">
+            <div class="col-md-1"><b>Cost:</b></div>
+            <div class="col-md-2"><input ng-model="cost" type="number" min="0" ></input></div> <!--onmouseover="clearZeroCost"-->
+            <div class="col-md-1"><b>Margin:</b></div>
+            <div class="col-md-2"><input ng-model="marginInput" type="number" min="0" step=".1"> </input></div>
+            <!--<div class="col-md-2"><div class="sellPriceBox" contenteditable="true" ng-model="marginInput"></div></div>-->
+            <div class="col-md-1"><b>Sell:</b></div>
+            <!--This calls a function and formats the output at the same time! and dynamically!-->
+            <!--<input type="text" contenteditable="false" value='{{sellCalc() | currency:"$"}}'></input>-->
+            <div class="col-md-2">{{sellCalc() | currency:"$"}}</div>
+            <!--<p style="border:1px solid;text-align:center;">{{sellCalc() | currency:"$"}}</p>-->
+        </div>
+    </div><br/>
+    <!--need to figure out how to just add a space between the first row and these rows-->
     
-    <div class="row"> 
-    
-        <div class="col-lg-12"> 
-            <span class="page-header">Sell Price 
-                <small>Add stuff for sell price!</small> 
-            </span> 
-        </div> 
-    
-    </div> 
-    
-    <!-- etc., more information about the company…. --> 
-
+    <!--this is the first column containers that the sell prices and margin copy will be held in-->
+    <div class="col-md-2" >
+        <div class="row">
+            <div class="col-md-3" style="text-align:right;"><b>.9</b></div>
+            <div class="col-md-9" style="text-align:left;"><p class="sellPriceBox">{{cost / .9 | currency:"$"}}</p> </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" style="text-align:right;"><b>.88</b></div>
+            <div class="col-md-9" style="text-align:left;"><p class="sellPriceBox">{{cost / .88 | currency:"$"}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" style="text-align:right;"><b>1.15</b></div>
+            <div class="col-md-9" style="text-align:left;"><p class="sellPriceBox">{{cost * 1.15 | currency:"$"}}</p></div><!--style="border:1px solid;text-align:center;"-->
+        </div>
+        <div class="row">
+            <div class="col-md-3" style="text-align:right;"><b>.85</b></div>
+            <div class="col-md-9" style="text-align:left;"><p class="sellPriceBox">{{cost / .85 | currency:"$"}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" style="text-align:right;"><b>1.2</b></div>
+            <div class="col-md-9" style="text-align:left;"><p class="sellPriceBox">{{cost * 1.2 | currency:"$"}}</p></div>
+        </div>
     </div>
+    <!--This is the second column of sell prices-->
+    <div class="col-md-3" >
+        <div class="row">
+            <div class="col-md-5" style="text-align:right;"><b>.8(x1.25)</b></div>
+            <div class="col-md-7" style="text-align:left;"><p class="sellPriceBox">{{cost / .8 | currency:"$"}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-md-5" style="text-align:right;"><b>.75(x1.33)</b></div>
+            <div class="col-md-7" style="text-align:left;"><p class="sellPriceBox">{{cost / .75 | currency:"$"}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-md-5" style="text-align:right;"><b>.66(x1.5)</b></div>
+            <div class="col-md-7" style="text-align:left;"><p class="sellPriceBox">{{cost * 1.5 | currency:"$"}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-md-5" style="text-align:right;"><b>.5(x2)</b></div>
+            <div class="col-md-7" style="text-align:left;"><p class="sellPriceBox">{{cost / .5 | currency:"$"}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-md-5" style="text-align:right;"><b>.4(x2.5)</b></div>
+            <div class="col-md-7" style="text-align:left;"><p class="sellPriceBox">{{cost / .4 | currency:"$"}}</p></div>
+        </div>
+    </div>
+        
+    <!--This is the third column where the margin copy form will go-->
+    <div class="col-md-4" style="border:1px solid;background-color:#DCE0DE;text-align:center;"><b>Copy Margin</b><br/><br/>
+        <b>Cost: </b>
+        <input ng-model="copyMarginCost" type="number" min="0" ng-change="copyMargin()"></input><br/>  <!--onchange="copyMargin()"-->
+        <br/>
+        <b>Sell: </b>
+        <input ng-model="copyMarginSell" type="number" min="0" ng-change="copyMargin()"></input><br/>
+        <br/>
+        <!--<button onclick="copyMargin()">Copy</button>-->
+        <!--<button ng-click="copyMargin()">Copy</button>-->
+        <button ng-click="clearCopyMargin()">Clear</button>
+        <!--<p>{{copyMargin | currency:"$"}}</p>-->
+        <!--<div>{{copyMarginCost / copyMarginSell | number:2}}</div>-->
+        <!--<div ng-model="calcMarginOut"></div>-->
+    </div>
+
+
+        
+       
+
+</div>

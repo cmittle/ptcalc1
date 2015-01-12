@@ -1,15 +1,95 @@
-<div class="container"> 
-    
-    <div class="row"> 
-    
-        <div class="col-lg-12"> 
-            <span class="page-header">VFD/Motor 
-                <small>Add VFD and motor calc stuff here!</small> 
-            </span> 
-        </div> 
-    
-    </div> 
-    
-    <!-- etc., more information about the company…. --> 
+<!--Vertical doesn't work right now... need to figure that out later
+                    Need to make this work with 0.1 Hz increments
+                    Also, why doesn't he hz output box live update?
+    need to set double click on slider to be reset to base frequency-->
 
+
+
+<div class="container" style="background-color: #ABC2BE;">
+    <div class="row" style="margin-top:25px">
+        <div class="col-md-6" >
+            <div >
+                
+                <input ng-model="vfdHz"  type="text" id="{{id}}" slider options="options2" orient="vertical" ng-change="calcRpm()"/> <!-- ng-change="calcRpm()"-->
+            </div>
+            <!--<div style="margin-top:50px">
+                <input ng-model="baseHz"  type="text" id="{{id}}" slider options="options2" />
+            </div>-->
+        </div>
+        <div class="col-md-3">
+            <div class="col-md-3">Hz</div> 
+            <div class="col-md-5" style="border:solid 1px;text-align:center;">{{vfdHz}}</div>
+        </div>
     </div>
+    <br/><br/>
+    
+    <!--tooltip="2.79%=1750 1.66%=1770 1.4%=1775  1.1%=1780"-->
+            <!--http://angular-ui.github.io/bootstrap/#/tooltip  for tooltip information-->
+            
+            <!--<select ng-model="baseHz" ng-options="hz for hz in hzs" ng-change="outTorqueCalc()"></select>-->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="row" style="margin-bottom:15px;">
+                <div class="col-md-5" style="text-align:right;"> <b>HP:</b></div>
+                <div class="col-md-7"><select ng-model="hpSelected" ng-options="hp for hp in hps" ng-change="calcTorque()"></select></div>
+            </div>
+            <div class="row" style="margin-bottom:15px;">
+                <div class="col-md-5" style="text-align:right;"> <b>Poles:</b></div>
+                <div class="col-md-7" style="text-align:left;"><select ng-model="polesSelected" ng-options="pole for pole in poles" ng-change="calcRpm()" ></select></div>
+            </div>
+            <div class="row" style="margin-bottom:15px;">
+                <div class="col-md-5" style="text-align:right;"> <b>Base Frq:</b></div>
+                <div class="col-md-7" style="text-align:left;"><select ng-model="baseHz" ng-options="hz for hz in hzs" ng-change="initFreq(); calcRpm()" ></select></div> <!--ng-change="initFreq(); calcRpm(); calcTorque()"-->
+            </div>
+            <div class="row" style="margin-bottom:15px;">
+                <div class="col-md-5" style="text-align:right;"> <b>Slip %:</b></div>
+                <div class="col-md-7" style="text-align:left;"><input ng-model="slip" type="number" min="0" step=".01" ng-change="calcRpm()" tooltip-popup-delay='1000' tooltip-html-unsafe="{{slipTooltip}}" tooltip-trigger="mouseover" tooltip-placement="bottom" style="width:75px;text-align:center;"> </div>
+            </div>
+            <div class="row" style="margin-bottom:15px;">
+                <div class="col-md-12"><button ng-click="resetMotorVfd()">Reset</button></div>
+            </div>
+        </div>
+        <div class="col-md-5" style="border:1px solid;background-color:#DCE0DE;text-align:center;">
+            <br/>
+            <div class="row">
+                <div class="col-md-5" style="text-align:right;"> <b>RPM: </b> </div>
+                <div class="col-md-7" style="text-align:left"> <p class="sellPriceBox" style="width:100px;">{{vrpm | number:2}}</p></div>
+            </div><!--{{cost / .75 | currency:"$"}}-->
+            <!--<input ng-model="rpm" type="number" min="0" ng-change="copyMargin()"></input><br/>-->  
+            <br/>
+            <div class="row">
+                <div class="col-md-5" style="text-align:right;"><b>Torque (lb-ft): </b></div>
+                <div class="col-md-7" style="text-align:left"> <p class="sellPriceBox" style="width:100px;">{{outTorque | number:2}}</p></div>
+            </div>
+                <!--<input ng-model="copyMarginSell" type="number" min="0" ng-change="copyMargin()"></input><br/>-->
+            <br/>
+            <div class="row">
+                <div class="col-md-5" style="text-align:right;"><b>Torque (lb-in): </b></div>
+                <div class="col-md-7" style="text-align:left"> <p class="sellPriceBox" style="width:100px;">{{outTorque * 12 | number:2}}</p></div>
+            </div>
+            <!--<input ng-model="copyMarginSell" type="number" min="0" ng-change="copyMargin()"></input><br/>-->
+        <br/>
+        </div>
+    </div>
+    <!--
+<div class="col-md-4" style="border:1px solid;background-color:#DCE0DE;text-align:center;"><b>Copy Margin</b><br/><br/>
+        <b>Cost: </b>
+        <input ng-model="copyMarginCost" type="number" min="0" ng-change="copyMargin()"></input><br/>  
+        <br/>
+        <b>Sell: </b>
+        <input ng-model="copyMarginSell" type="number" min="0" ng-change="copyMargin()"></input><br/>
+        <br/>
+        
+        <button ng-click="clearCopyMargin()">Clear</button>
+        
+    </div>-->
+    
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    
+</div>
